@@ -56,8 +56,8 @@ public class GradeBook {
 
     private static void processArrays() {
         double[] doubleArray = {8.9, 5.65, 8.12, 45.0, 77.1};
-        Arrays.sort(doubleArray);
-        System.out.println(Arrays.toString(doubleArray));
+        Arrays.sort(doubleArray); //сортируем массив
+        System.out.println(Arrays.toString(doubleArray)); //выводим массив
 
         int[] filledArray = new int[7];
         Arrays.fill(filledArray, 7); //заполняем
@@ -66,7 +66,7 @@ public class GradeBook {
         int[] intArray = {1, 2, 3, 4, 5, 6, 7};
         int[] arrayCopy = new int[10];
 
-        System.arraycopy(intArray, 0, arrayCopy, 0, intArray.length);
+        System.arraycopy(intArray, 0, arrayCopy, 0, intArray.length); //копируем массив intArray в массив arrayCopy
         System.out.println(Arrays.toString(arrayCopy));
     }
 }
