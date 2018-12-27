@@ -1,14 +1,18 @@
 package com.javacode.collections.list;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.LinkedList;
 
 public class ToDoList {
-    private List<String> toDoList = new ArrayList<>();
+    //    private List<String> toDoList = new ArrayList<>();
+    private LinkedList<String> toDoList = new LinkedList<>();
 
     public void addToList(String task) {
         toDoList.add(task); //добавили в toDoList наш task
     }
+
+    /*public void addToList(String task) {
+        toDoList.addFirst(task); //добавили в toDoList наш task на первую позицию командой addFirst
+    }*/
 
     public void addToListAtPosition(int position, String task) {
         toDoList.add(position, task);
