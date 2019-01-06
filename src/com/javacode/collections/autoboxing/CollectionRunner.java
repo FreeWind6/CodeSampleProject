@@ -18,16 +18,37 @@ public class CollectionRunner {
 
         Collections.shuffle(deckOfCards); //перемешали карты
 
-        System.out.println("\n\nCard after shuffle");
-        for (int i = 0; i < deckOfCards.size(); i++) {
-            System.out.printf("%-20s %s", deckOfCards.get(i), (i + 1) % 4 == 0 ? "\n" : " "); // если (i + 1) % 4 == 0 то переходим на новую строку, если нет то просто пробел
+        Collections.sort(deckOfCards);
+
+
+        Card card = new Card(Card.Suit.SPADES, Card.Face.QUEEN);
+        int i = Collections.binarySearch(deckOfCards, card);
+
+        if (i >= 0) {
+            System.out.println("Card was found at position " + i);
+        } else {
+            System.out.println("Cars was not found");
         }
 
+        List<Card> cardList = new ArrayList<>(deckOfCards); //в нашем листе 52 карты
+        Collections.fill(cardList, card);
+        Collections.addAll(cardList, card, card, card);
+        Collections.copy(cardList, deckOfCards);
+        int frequency = Collections.frequency(cardList, card);//возвращает количество пиковых дам в колоде
+
+        System.out.println("Frequency of " + card + " is " + frequency);
+
+        System.out.println("MIN: " + Collections.min(cardList));
+        System.out.println("MAX: " + Collections.max(cardList));
+//        printOutput(cardList);
+
+
+//        System.out.println("\n\nCard after shuffle");
+//        printOutput((List<Card>) deckOfCards);
+
         Collections.sort(deckOfCards, new CardComparator());
-        System.out.println("\n\nCard after sorting");
-        for (int i = 0; i < deckOfCards.size(); i++) {
-            System.out.printf("%-20s %s", deckOfCards.get(i), (i + 1) % 4 == 0 ? "\n" : " "); // если (i + 1) % 4 == 0 то переходим на новую строку, если нет то просто пробел
-        }
+//        System.out.println("\n\nCard after sorting");
+//        printOutput(deckOfCards);
 //        List<String> colors = new ArrayList<>();
 //
 //        colors.add("Yellow");
@@ -39,6 +60,12 @@ public class CollectionRunner {
 //        System.out.println("List before sorting: " + colors); //до сортировки
 //        Collections.sort(colors); //сортируем
 //        System.out.println("List after sorting: " + colors); //после сортировки
+    }
+
+    private static void printOutput(List<Card> deckOfCards) {
+        for (int i = 0; i < deckOfCards.size(); i++) {
+            System.out.printf("%-20s %s", deckOfCards.get(i), (i + 1) % 4 == 0 ? "\n" : " "); // если (i + 1) % 4 == 0 то переходим на новую строку, если нет то просто пробел
+        }
     }
 
     public static class Card implements Comparable<Card> {
@@ -76,6 +103,20 @@ public class CollectionRunner {
         }
 
         @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            Card card = (Card) o;
+            return suit == card.suit &&
+                    face == card.face;
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(suit, face);
+        }
+
+        @Override
         public String toString() {
             return face + " of " + suit;
         }
@@ -95,7 +136,7 @@ public class CollectionRunner {
             } else if (faces.indexOf(card1.getFace()) > faces.indexOf(card2.getFace())) {
                 return -1;
             } else if (faces.indexOf(card1.getFace()) == faces.indexOf(card2.getFace())) {
-                return 0;
+                return String.valueOf(card1.getSuit()).compareTo(String.valueOf(card2.getSuit()));
             }
             return 0;
         }
