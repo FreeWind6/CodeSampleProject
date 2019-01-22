@@ -37,7 +37,16 @@ public class SetRunner {
         europaCars.add(new Car("VM", "Polo", 35));
 
         Set<Car> uniqueCars = new HashSet<>(sixCars);
-        uniqueCars.addAll(europaCars);
+        uniqueCars.addAll(europaCars); //обьединение
+//        print(uniqueCars);
+
+//        sixCars.removeAll(europaCars); //разность
+//        europaCars.removeAll(sixCars);
+//        print(sixCars);
+//        print(europaCars);
+
+        sixCars.retainAll(europaCars); //пересечение
+        uniqueCars.removeAll(sixCars);
         print(uniqueCars);
 
 
