@@ -1,7 +1,6 @@
 package com.javacode.collections.set;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class SetRunner {
     public static void main(String[] args) {
@@ -34,9 +33,9 @@ public class SetRunner {
         europaCars.add(new Car("Reno", "Logan", 30));
         europaCars.add(new Car("Reno", "Megan", 50));
         europaCars.add(new Car("VW", "Golf", 45));
-        europaCars.add(new Car("VM", "Polo", 35));
+        europaCars.add(new Car("VW", "Polo", 35));
 
-        Set<Car> uniqueCars = new HashSet<>(sixCars);
+        NavigableSet<Car> uniqueCars = new TreeSet<>(sixCars);
         uniqueCars.addAll(europaCars); //обьединение
 //        print(uniqueCars);
 
@@ -44,10 +43,25 @@ public class SetRunner {
 //        europaCars.removeAll(sixCars);
 //        print(sixCars);
 //        print(europaCars);
+//
+//        sixCars.retainAll(europaCars); //пересечение
+//        uniqueCars.removeAll(sixCars);
+//        SortedSet<Car> cars = uniqueCars.headSet(new Car("Toyota", "Auris", 40));//возвращает все элементы от начала до указанного эл-та
+        SortedSet<Car> cars = uniqueCars.subSet(new Car("Toyota", "Auris", 40), true, new Car("Audi", "A3", 60), true);
 
-        sixCars.retainAll(europaCars); //пересечение
-        uniqueCars.removeAll(sixCars);
         print(uniqueCars);
+
+        System.out.println("\nHigher");
+        System.out.println(uniqueCars.higher(new Car("Toyota", "Auris", 40)));
+
+        System.out.println("\nLower");
+        System.out.println(uniqueCars.lower(new Car("Toyota", "Auris", 40)));
+
+        System.out.println("\nCeiling");
+        System.out.println(uniqueCars.ceiling(new Car("Toyota", "Auris", 43)));
+
+        System.out.println("\nFloor");
+        System.out.println(uniqueCars.floor(new Car("Toyota", "Auris", 39)));
 
 
     }
