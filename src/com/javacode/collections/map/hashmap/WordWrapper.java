@@ -1,4 +1,4 @@
-package com.javacode.collections.map;
+package com.javacode.collections.map.hashmap;
 
 import java.util.Objects;
 
