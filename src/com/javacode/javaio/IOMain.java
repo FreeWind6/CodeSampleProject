@@ -19,8 +19,11 @@ public class IOMain {
         writer.writeFile(grades, FILE_NAME);
 //        reeder.reedFile(FILE_NAME);
 //        writer.writeWithFormatter();
-        processGrades(grades, writer, BINARY_FILE);
-        outputObjects(reeder, BINARY_FILE);
+//        processGrades(grades, writer, BINARY_FILE);
+//        outputObjects(reeder, BINARY_FILE);
+
+        FileUtils utils = new FileUtils();
+        utils.printIOFileDetails("./");
     }
 
     private static void processGrades(SortedMap<AverageStudentGrade, Set<SubjectGrade>> grades, Writer writer, String fileName) {
