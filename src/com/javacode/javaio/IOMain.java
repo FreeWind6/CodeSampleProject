@@ -30,7 +30,9 @@ public class IOMain {
 //        reeder.nioReadFileWithBuffer(FILE_NAME);
 //        writer.nioWriteWithBuffer(BUFFERED_FILE);
 //        reeder.nioReadWithStream(FILE_NAME);
-        writer.nioWriteWithStream(BUFFERED_FILE);
+//        writer.nioWriteWithStream(BUFFERED_FILE);
+//        reeder.nioReadWithChannel(FILE_NAME);
+        writer.nioWriteWithChannel(BINARY_FILE);
     }
 
     private static void processGrades(SortedMap<AverageStudentGrade, Set<SubjectGrade>> grades, Writer writer, String fileName) {
