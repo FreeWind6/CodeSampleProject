@@ -90,7 +90,7 @@ public class Writer {
         channel.close();
     }
 
-/*    public void writeWithRandomAccess(String fileName) throws IOException {
+    public void writeWithRandomAccess(String fileName) throws IOException {
         ByteBuffer mark = ByteBuffer.wrap(" MARKED AREA ".getBytes());
 
         ByteBuffer buffer = ByteBuffer.allocate(10);
@@ -114,8 +114,6 @@ public class Writer {
             buffer.rewind();
             openedFile.write(buffer);
         }
-
-    }*/
-
+    }
 }
 

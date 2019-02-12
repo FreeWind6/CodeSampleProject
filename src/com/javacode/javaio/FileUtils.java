@@ -76,9 +76,7 @@ public class FileUtils {
         Files.move(absolutePath, filesPath.resolve(path), StandardCopyOption.REPLACE_EXISTING);
         Files.delete(filesPath.resolve(path));
         Files.delete(filesPath);
-
     }
-
 
     public void processDir() throws IOException {
         Path dir = Paths.get("temp");
