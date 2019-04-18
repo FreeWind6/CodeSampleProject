@@ -8,6 +8,8 @@ public class SetRunner {
          *         TreeSet - сортирует эл-ты по алфавиту
          *         HashSet - рандомно выводит
          *         LinkedHashSet - выводит в том порядке что мы записали
+         *         Queue - первый зашел - первый вышел
+         *         Stack - последний зашел - первый вышел
          * */
 /*        String[] cars = {"Mini", "Mers", "Audi", "VM", "Smart", "Toyota", "Porsche"};
         String[] otherCars = {"Audi", "Ford", "GMC", "Toyota", "Chevrolet"};

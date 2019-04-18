@@ -96,7 +96,8 @@ public class StreamsOverviewMain {
     private static <T> void testStreamGenerator(int limit, Supplier<T> supplier){
         Stream.generate(supplier)
                 .parallel()
-                .limit(limit).forEach(System.out::println);
+                .limit(limit)
+                .forEach(System.out::println);
     }
 
    private static <R> void groupByCriterion(Function<Employee, R> function){

@@ -4,6 +4,7 @@ import java.util.*;
 
 public class MapLauncher {
     public static void main(String[] args) {
+        //Map - пара: ключ, значение
 /*        Map<String, Integer> numbers = new HashMap<>();
         numbers.put("Toyota", 50);
         numbers.put("Audi", 51);
