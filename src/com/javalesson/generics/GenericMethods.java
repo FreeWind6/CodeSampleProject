@@ -65,7 +65,7 @@ public class GenericMethods {
         return max;
     }
 
-    private static void printElements(List<? extends Number> list){
+    private static void printElements(List<? extends Number> list){//принимает тип который экстендит намбер
         for(Number n : list){
             System.out.println(n);
         }

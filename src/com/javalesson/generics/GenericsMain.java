@@ -5,6 +5,9 @@ import java.util.List;
 
 public class GenericsMain {
 
+//    extends Number - принимает то что экстендит Number(Number является родительским для него)
+//    super Number - принимает то что является родительским типом для Number
+
     public static void main(String[] args) {
         Container<Integer> box = new Container<>(1);
 
