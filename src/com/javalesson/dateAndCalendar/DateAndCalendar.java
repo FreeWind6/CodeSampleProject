@@ -1,4 +1,4 @@
-package com.javalesson;
+package com.javalesson.dateAndCalendar;
 
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -6,7 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-public class dateAndCalendar {
+public class DateAndCalendar {
     public static void main(String[] args) throws ParseException {
 
         Date date = new Date();
