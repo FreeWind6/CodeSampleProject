@@ -11,7 +11,7 @@ public class Test {
     }
 
     @MyAnnotation
-    public void test(@MyAnnotation int value) {
+    public void ClientReposit(@MyAnnotation int value) {
         @MyAnnotation String localVar = "Hello";
     }
 
